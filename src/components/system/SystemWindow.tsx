@@ -10,7 +10,7 @@ const toneVar: Record<Tone, string> = {
 };
 
 function Bracket({ pos, color }: { pos: "tl" | "tr" | "bl" | "br"; color: string }) {
-  const base = "pointer-events-none absolute h-5 w-5";
+  const base = "pointer-events-none absolute h-4 w-4 border-[1.5px] border-transparent";
   const map = {
     tl: "left-0 top-0 border-l border-t",
     tr: "right-0 top-0 border-r border-t",
@@ -20,7 +20,7 @@ function Bracket({ pos, color }: { pos: "tl" | "tr" | "bl" | "br"; color: string
   return (
     <span
       className={cn(base, map[pos])}
-      style={{ borderColor: color, boxShadow: `0 0 8px ${color}, inset 0 0 6px ${color}` }}
+      style={{ borderColor: color, boxShadow: `0 0 10px color-mix(in oklab, ${color} 70%, transparent)` }}
     />
   );
 }
