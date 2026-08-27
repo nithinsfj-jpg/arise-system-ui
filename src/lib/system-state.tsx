@@ -59,12 +59,11 @@ export function SystemProvider({ children }: { children: ReactNode }) {
       points,
       goals,
       questComplete,
-      addAttr: (k) =>
-        setPoints((p) => {
-          if (p <= 0) return p;
-          setAttrs((a) => ({ ...a, [k]: a[k] + 1 }));
-          return p - 1;
-        }),
+      addAttr: (k) => {
+        if (points <= 0) return;
+        setPoints((p) => p - 1);
+        setAttrs((a) => ({ ...a, [k]: a[k] + 1 }));
+      },
       saveAttrs: () => undefined,
       addGoal: (name, step) =>
         setGoals((gs) =>
