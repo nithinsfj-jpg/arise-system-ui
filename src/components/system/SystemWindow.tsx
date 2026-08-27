@@ -10,12 +10,12 @@ const toneVar: Record<Tone, string> = {
 };
 
 function Bracket({ pos, color }: { pos: "tl" | "tr" | "bl" | "br"; color: string }) {
-  const base = "pointer-events-none absolute h-4 w-4 border-[1.5px] border-transparent";
+  const base = "pointer-events-none absolute h-4 w-4";
   const map = {
-    tl: "left-0 top-0 border-l border-t",
-    tr: "right-0 top-0 border-r border-t",
-    bl: "left-0 bottom-0 border-l border-b",
-    br: "right-0 bottom-0 border-r border-b",
+    tl: "left-0 top-0 border-l-[1.5px] border-t-[1.5px]",
+    tr: "right-0 top-0 border-r-[1.5px] border-t-[1.5px]",
+    bl: "left-0 bottom-0 border-l-[1.5px] border-b-[1.5px]",
+    br: "right-0 bottom-0 border-r-[1.5px] border-b-[1.5px]",
   } as const;
   return (
     <span
