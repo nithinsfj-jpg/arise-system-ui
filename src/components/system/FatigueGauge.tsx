@@ -12,10 +12,11 @@ export function FatigueGauge({ value, max = 8 }: { value: number; max?: number }
           const a = (i / max) * Math.PI * 2 - Math.PI / 2;
           const gap = 0.16;
           const a2 = ((i + 1 - gap) / max) * Math.PI * 2 - Math.PI / 2;
-          const x1 = c + r * Math.cos(a);
-          const y1 = c + r * Math.sin(a);
-          const x2 = c + r * Math.cos(a2);
-          const y2 = c + r * Math.sin(a2);
+          const f = (n: number) => n.toFixed(3);
+          const x1 = f(c + r * Math.cos(a));
+          const y1 = f(c + r * Math.sin(a));
+          const x2 = f(c + r * Math.cos(a2));
+          const y2 = f(c + r * Math.sin(a2));
           const tone = active ? "var(--warn)" : "var(--system)";
           return (
             <path
